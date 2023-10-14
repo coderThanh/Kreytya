@@ -1,0 +1,170 @@
+// header desk
+@use "@/styles/_breakpoints" as _bp;
+
+
+.desk {
+    // background-color: rgb(255 255 255 / 10%);
+    padding: 30px 0 20px;
+
+    --radius: 300px;
+
+    .inner {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .nav {
+        flex: 1 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .navInner {
+        display: flex;
+        position: relative;
+        width: fit-content;
+        padding: 4px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            display: block;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            border-radius: var(--radius);
+            background-color: var(--surface);
+            opacity: var(--opacity-bg, 0.1);
+        }
+    }
+
+    .menuItem {
+        position: relative;
+        cursor: pointer;
+        font-size: 1.2rem;
+        padding: 10px 24px;
+        line-height: 1.4;
+        color: var(--color-title);
+        font-weight: 400;
+
+        &::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            display: block;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            border-radius: var(--radius);
+            opacity: 0.05;
+            transition: 320ms all;
+        }
+
+        &:hover {
+            &::before {
+                background-color: var(--surface);
+            }
+        }
+
+        &.active {
+            color: var(--on-surface);
+
+            &::before {
+                background-color: var(--surface);
+                opacity: 1;
+            }
+        }
+    }
+
+
+    // transparent
+    &.transparent {
+        .navInner {
+            &::before {
+                background-color: var(--background);
+            }
+        }
+
+        .menuItem {
+            color: var(--on-surface);
+
+            &:hover {
+
+                &::before {
+                    background-color: var(--background);
+                }
+
+            }
+
+            &.active {
+                color: var(--color-title);
+
+                &::before {
+                    background-color: var(--background);
+                    opacity: 1;
+                }
+            }
+        }
+
+        .button {
+            border: 0;
+            background-color: transparent;
+            color: var(--on-surface);
+            position: relative;
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 10px 24px;
+            line-height: 1.4;
+            font-weight: 400;
+            overflow: hidden;
+            border-radius: var(--radius);
+            transition: 320ms all;
+
+
+            &::before {
+                content: "";
+                position: absolute;
+                z-index: -5;
+                width: 100%;
+                height: 100%;
+                border-radius: var(--radius);
+                display: block;
+                left: 0;
+                top: 0;
+                background-color: var(--background);
+                opacity: var(--opacity-bg, 0.1);
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                z-index: -1;
+                width: 100%;
+                height: 100%;
+                border-radius: var(--radius);
+                display: block;
+                left: 0;
+                top: 0;
+                background-color: var(--background);
+                transition: 320ms all;
+                transform: translateX(-110%);
+            }
+
+            &:hover {
+
+                color: var(--color-title);
+
+                &::after {
+                    transform: translateX(0%);
+                }
+            }
+        }
+    }
+}

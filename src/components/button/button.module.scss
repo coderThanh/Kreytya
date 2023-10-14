@@ -1,0 +1,349 @@
+.wrap {
+    border: 0;
+    padding: 0;
+    background: transparent;
+
+}
+
+.inner {
+    box-shadow: none;
+    border: 0;
+    font-size: 1rem;
+    color: var(--color-title);
+    padding: 12px 20px;
+    border-radius: 300px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    cursor: pointer;
+    font-weight: 400;
+    min-height: var(--button-heigh);
+    display: flex;
+    align-items: center;
+    line-height: 1.1;
+    font-size: 1.1rem;
+
+    &.small {
+        padding: 5px 10px;
+        min-height: unset;
+        font-size: 1rem;
+    }
+
+}
+
+.textWrap {
+    display: inline-block;
+    padding-bottom: 2px;
+    transition: 320ms all;
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    pointer-events: none;
+    z-index: -5;
+    transition: 220ms all;
+}
+
+.default {
+    .inner::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: var(--background);
+        border-radius: 300px;
+        transform: translateX(-110%);
+        transition: all 300ms;
+    }
+
+    &.dark {
+        .inner {
+            color: var(--on-surface);
+
+        }
+
+        .bg {
+            background-color: var(--surface);
+        }
+    }
+
+    &.darkTransparent {
+        .inner {
+            color: var(--on-surface);
+        }
+
+        .bg {
+            background-color: var(--background);
+            opacity: var(--opacity-bg);
+        }
+    }
+
+    &.primary {
+        .inner {
+            color: var(--on-primary);
+        }
+
+        .bg {
+            background-color: var(--primary);
+        }
+    }
+
+    &.secondary {
+        .inner {
+            color: var(--on-secondary);
+        }
+
+        .bg {
+            background-color: var(--secondary);
+        }
+    }
+
+
+    &.error {
+        .inner {
+            color: var(--on-error);
+        }
+
+        .bg {
+            background-color: var(--error);
+        }
+
+
+    }
+
+    &.tertiary {
+        .inner {
+            color: var(--on-tertiary);
+        }
+
+        .bg {
+            background-color: var(--tertiary);
+        }
+    }
+
+    &.white {
+        .inner {
+            color: var(--color-title);
+        }
+
+        .bg {
+            background-color: var(--background);
+            transition: 0ms opacity;
+        }
+
+        &:hover {
+            .bg {
+                background-color: var(--surface);
+                opacity: var(--opacity-bg);
+            }
+        }
+
+        &:active {
+            .bg {
+                background-color: var(--surface);
+                opacity: calc(var(--opacity-bg) * 1.2);
+            }
+        }
+    }
+
+
+    &:hover {
+
+        .inner {
+            color: var(--color-title);
+
+            &::before {
+                transform: translateX(0%);
+            }
+        }
+    }
+
+    &:active {
+        .inner {
+            color: var(--color-title);
+
+            &::before {
+                transform: translateX(0%);
+            }
+        }
+    }
+}
+
+.text {
+    &.dark {
+        .inner {
+            color: var(--on-surface);
+
+        }
+
+        .bg {
+            background-color: var(--on-surface);
+            opacity: 0;
+        }
+    }
+
+    &.primary {
+        .inner {
+            color: var(--primary);
+        }
+
+        .bg {
+            background-color: var(--primary);
+            opacity: 0;
+        }
+    }
+
+    &.secondary {
+        .inner {
+            color: var(--secondary);
+        }
+
+        .bg {
+            background-color: var(--secondary);
+            opacity: 0;
+        }
+    }
+
+
+    &.error {
+        .inner {
+            color: var(--error);
+        }
+
+        .bg {
+            background-color: var(--error);
+            opacity: 0;
+        }
+    }
+
+    &.tertiary {
+        .inner {
+            color: var(--tertiary);
+        }
+
+        .bg {
+            background-color: var(--tertiary);
+            opacity: 0;
+        }
+    }
+
+
+    &:hover {
+        .bg {
+            opacity: var(--opacity-bg);
+        }
+
+
+    }
+
+    &:active {
+        .bg {
+            opacity: calc(var(--opacity-bg) * 1.8);
+        }
+
+
+    }
+}
+
+
+.outline {
+
+    .inner {
+        border: 1px solid currentColor;
+    }
+
+    &.dark {
+        .inner {
+            color: var(--surface);
+
+        }
+
+        .bg {
+            background-color: var(--surface);
+            opacity: 0;
+        }
+    }
+
+    &.primary {
+        .inner {
+            color: var(--primary);
+
+        }
+
+        .bg {
+            background-color: var(--primary);
+            opacity: 0;
+        }
+    }
+
+    &.secondary {
+        .inner {
+            color: var(--secondary);
+
+        }
+
+        .bg {
+            background-color: var(--secondary);
+            opacity: 0;
+        }
+    }
+
+
+    &.error {
+        .inner {
+            color: var(--error);
+
+        }
+
+        .bg {
+            background-color: var(--error);
+            opacity: 0;
+        }
+    }
+
+    &.tertiary {
+        .inner {
+            color: var(--tertiary);
+
+        }
+
+        .bg {
+            background-color: var(--tertiary);
+            opacity: 0;
+        }
+    }
+
+    &.white {
+        .inner {
+            color: var(--background);
+
+        }
+
+        .bg {
+            background-color: var(--background);
+            opacity: 0;
+        }
+    }
+
+
+    &:hover {
+        .bg {
+            opacity: var(--opacity-bg);
+        }
+    }
+
+    &:active {
+        .bg {
+            opacity: calc(var(--opacity-bg) * 3);
+        }
+    }
+}

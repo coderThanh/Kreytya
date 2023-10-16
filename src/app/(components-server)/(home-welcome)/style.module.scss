@@ -1,0 +1,111 @@
+@use "@/styles/_breakpoints" as _bp;
+
+.wrap {
+    background-color: var(--surface);
+    padding: 240px 0;
+
+
+}
+
+.inner {
+
+    text-align: center;
+
+    h1 {
+        color: white;
+        font-weight: 700;
+        font-size: 6rem;
+        line-height: 1.15;
+
+        span {
+            position: relative;
+        }
+
+    }
+
+    .underline {
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: white;
+        display: block;
+    }
+
+    p {
+        font-size: var(--size-l3);
+        display: block;
+        width: 70%;
+        margin: 0 auto;
+        color: white;
+        line-height: 1.4;
+    }
+
+    .btn {
+        span {
+            font-size: 1.3rem;
+            display: block;
+            padding: 6px 30px;
+        }
+
+    }
+
+}
+
+.social {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px 12px;
+    justify-content: center;
+}
+
+.icon {
+    width: 44px;
+    height: 44px;
+    display: block;
+
+    rect {
+        fill: var(--background, white);
+        opacity: var(--opacity-bg, 01);
+        transition: 320ms all;
+
+    }
+
+    &:hover {
+        rect {
+            opacity: 0.2;
+        }
+    }
+}
+
+@media #{_bp.$max-w-sm} {
+    .inner {
+
+
+        p {
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 4rem;
+        }
+    }
+}
+
+@media #{_bp.$max-w-xs} {
+    .wrap {
+        padding: 240px 0 200px;
+    }
+
+    .inner {
+        br {
+            display: none;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+    }
+}

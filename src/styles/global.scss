@@ -24,9 +24,8 @@
 }
 
 body {
-  background-color: var(--surface);
-
   color: var(--color-basic);
+  font-family: var(--font-family);
 }
 
 h1,
@@ -72,6 +71,10 @@ h6 {
 blockquote {
   background-color: transparent;
   padding: 0;
+}
+
+p {
+  line-height: 1.5;
 }
 
 table {

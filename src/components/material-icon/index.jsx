@@ -1,20 +1,14 @@
 import classNames from 'classnames'
 
-export const AppMaterialIconType = {
-  outlined: 'material-icons-outlined',
-  filled: 'material-icons',
-  round: 'material-icons-round',
-}
-
-export default function AppMaterialIcon(props) {
+export default function AppMaterialIcon({ size, className, type, children }) {
   return (
     <span
       style={{
-        fontSize: props.size,
+        fontSize: size,
       }}
-      className={classNames(props.type, props.className, 'mater-icon')}
+      className={classNames(type, className, 'mater-icon')}
     >
-      {props.children}
+      {children}
     </span>
   )
 }

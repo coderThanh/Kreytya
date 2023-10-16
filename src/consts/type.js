@@ -18,3 +18,9 @@ export const AppButtonSize = {
   default: 'default',
   small: 'small',
 }
+
+export const AppMaterialIconType = {
+  outlined: 'material-icons-outlined',
+  filled: 'material-icons',
+  round: 'material-icons-round',
+}

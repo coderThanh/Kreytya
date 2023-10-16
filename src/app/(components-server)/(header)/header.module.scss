@@ -1,12 +1,23 @@
 // header desk
 @use "@/styles/_breakpoints" as _bp;
 
+.header {
+    &.transparent {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 500;
+        width: 100%;
+    }
+}
 
 .desk {
     // background-color: rgb(255 255 255 / 10%);
     padding: 30px 0 20px;
 
     --radius: 300px;
+
+
 
     .inner {
         display: flex;
@@ -74,7 +85,7 @@
         }
 
         &.active {
-            color: var(--on-surface);
+            color: white;
 
             &::before {
                 background-color: var(--surface);
@@ -93,7 +104,7 @@
         }
 
         .menuItem {
-            color: var(--on-surface);
+            color: white;
 
             &:hover {
 
@@ -116,7 +127,7 @@
         .button {
             border: 0;
             background-color: transparent;
-            color: var(--on-surface);
+            color: white;
             position: relative;
             cursor: pointer;
             font-size: 1.2rem;

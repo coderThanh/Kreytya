@@ -46,7 +46,7 @@ export default function Layout({ children, className }) {
           --background: #fff;
           --on-background: #6f6f6f;
           --surface: #101010;
-          --on-surface: #fff;
+          --on-surface: #b7b7b7;
 
           --color-neutral1: #f2f2f2;
           --color-neutral2: #ccc;

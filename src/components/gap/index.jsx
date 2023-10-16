@@ -1,3 +1,5 @@
+'use client'
+
 import { MEDIA_MAX_SM, MEDIA_MAX_XS } from '@/consts/const'
 import classNames from 'classnames'
 

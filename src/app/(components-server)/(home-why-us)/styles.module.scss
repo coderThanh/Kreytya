@@ -1,0 +1,94 @@
+@use '@/styles/_breakpoints' as _bp;
+
+.colInner {
+    background-color: var(--surface);
+    padding: 50px 30px 30px;
+    border-radius: 50px;
+    margin-top: -100px;
+    position: relative;
+}
+
+.img img {
+    width: 100%;
+    height: auto;
+}
+
+.item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+    z-index: 10;
+    min-height: 100%;
+
+    &::before {
+        content: '';
+        background-color: var(--background);
+        opacity: var(--opacity-bg, 0.1);
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+    }
+
+    h5 {
+        color: white;
+        font-size: var(--size-l2);
+        line-height: 1.2;
+        margin: 20px 0;
+    }
+
+    p {
+        color: var(--on-surface);
+        font-size: var(--size-l4);
+        font-weight: 300;
+        margin: 20px 0;
+    }
+}
+
+.boxText {
+    padding: 0 30px;
+}
+
+.count {
+    color: white;
+    font-size: var(--size-l3);
+    font-weight: 500;
+    padding-top: 30px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.sub {
+    position: absolute;
+    bottom: 1px;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    background-color: var(--surface);
+    color: white;
+    display: block;
+    width: fit-content;
+    border-radius: 0 0 20px 20px;
+    font-size: var(--size-l3);
+    line-height: 1.2;
+    padding: 5px 30px 10px;
+    text-align: center;
+    width: max-content;
+}
+
+@media #{_bp.$max-w-xs} {
+    .inner {
+        --bs-gutter-x: 0px;
+    }
+
+    .colInner {
+        padding: 40px 20px 30px;
+        border-radius: 30px;
+    }
+
+    .boxText {
+        padding: 0 24px;
+    }
+}

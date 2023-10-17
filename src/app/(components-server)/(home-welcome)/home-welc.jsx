@@ -41,7 +41,7 @@ export default function HomeWelcome({}) {
               color={AppButtonColor.primary}
               kind={AppButtonKind.default}
               text={'Start New Project'}
-              className={classNames(styles.btn)}
+              className={classNames(styles.btn, styles.btnPrimary)}
             ></AppButton>
           </RevealFade>
           <Gap />

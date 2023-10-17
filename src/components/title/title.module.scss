@@ -32,3 +32,22 @@
     color: var(--on-background);
     margin-bottom: 0;
 }
+
+.light {
+    .sup {
+        .span {
+            background-color: var(--background);
+            color: var(--color-title);
+
+        }
+
+    }
+
+    .title .span {
+        color: white
+    }
+
+    .sub .span {
+        color: var(--on-surface);
+    }
+}

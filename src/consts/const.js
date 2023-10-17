@@ -12,3 +12,6 @@ export const MEDIA_MAX_LG = 1199
 //
 export const TITLE_PAGE = 'Kretya design by Sago'
 export const DESCRIPTION_PAGE = 'Kretya design by Sago'
+
+//
+export const IMG_PLACEHOLDER_GRAY = '/assets/placeholder-gray.jpg'

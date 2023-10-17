@@ -42,7 +42,10 @@
         line-height: 1.4;
     }
 
-    .btn {
+    .btn.btnPrimary {
+        --color-bg-hover: #fff;
+        --color-text-hover: var(--text-title);
+
         span {
             font-size: 1.3rem;
             display: block;

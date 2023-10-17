@@ -17,7 +17,7 @@
 
   --mb: 18px;
 
-  --opacity-bg: 0.1;
+  --opacity-bg: 0.08;
 
   font-size: 16px;
 
@@ -121,8 +121,16 @@ table {
   text-align: right;
 }
 
+
+.material-icons,
+.material-icons-rounded,
+.material-icons-outlined {
+  line-height: 1.2;
+  vertical-align: middle;
+}
+
 /* Responsive --- */
-@media #{bp.$max-w-sm} {
+@media #{bp.$max-w-md} {
   :root {
     --size-l1: 2.6rem;
     --size-l2: 1.8rem;

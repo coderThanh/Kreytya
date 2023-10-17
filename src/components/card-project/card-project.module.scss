@@ -1,0 +1,100 @@
+@use "@/styles/_breakpoints" as _bp;
+
+.box {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: stretch;
+    gap: 10px;
+
+    --radius: 50px;
+
+    img {
+        transition: 320ms all;
+    }
+
+    &:hover {
+        img {
+            filter: grayscale(1);
+        }
+    }
+}
+
+.boxImg {
+    border-radius: var(--radius);
+    overflow: hidden;
+    background-color: var(--color-neutral1);
+    display: block;
+    cursor: pointer;
+    width: 100%;
+}
+
+.boxText {
+    background-color: var(--color-neutral1);
+    border-radius: var(--radius);
+    padding: 20px 30px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 16px;
+}
+
+.boxTextInner {
+    flex: 1 1;
+}
+
+.title {
+    color: var(--color-title);
+    font-size: var(--size-l3);
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--on-background);
+    font-size: var(--size-l4);
+    line-height: 1.5;
+}
+
+.btn {
+    font-size: var(--size-l3);
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    font-weight: 300;
+    line-height: 1.1;
+    border-radius: 100px;
+    padding: 7px 24px;
+    display: inline-block;
+    transition: 320ms all;
+
+    &:hover {
+        color: var(--on-primary);
+        border: 1px solid var(--primary);
+        background-color: var(--primary);
+    }
+}
+
+@media #{_bp.$max-w-sm} {
+    .box {
+        --radius: 30px;
+    }
+
+    .boxText {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: stretch;
+    }
+}

@@ -1,54 +1,63 @@
+'use client'
+
 import classNames from 'classnames'
 import { useEffect, useState } from 'react'
 
-import { IconClose } from '../../components-child/icon'
 import styles from './windown.module.scss'
 
-export default function WindownE(props) {
-  const [isShow, setShow] = useState(props.isShow)
+export default function WindownE({
+  isShow,
+  before,
+  classWrap,
+  children,
+  onClick,
+  classBefore,
+}) {
+  const [stIsShow, setShow] = useState(isShow)
   // Event onclick
-  function onClick(event) {
-    props.onClick && props.onClick(!isShow)
-    setShow(!isShow)
+  function handleClick(event) {
+    onClick && onClick(!stIsShow)
+    setShow(!stIsShow)
   }
 
   useEffect(() => {
-    setShow(props.isShow)
-  }, [props.isShow])
+    setShow(stIsShow)
+  }, [stIsShow])
 
   return (
     <>
-      {props.before && (
+      {before && (
         <div
-          className={classNames('windown-before', props.classBefore)}
-          onClick={(e) => onClick(e)}
+          className={classNames('windown-before', classBefore)}
+          onClick={(e) => handleClick(e)}
         >
-          {props.before}
+          {before}
         </div>
       )}
       <div
         className={classNames(
           styles.wrap,
           'windown-wrap',
-          props.classWrap,
-          isShow ? styles.show : '',
+          classWrap,
+          stIsShow ? styles.show : '',
         )}
       >
         <div className={classNames(styles.inner, 'windown-inner')}>
           <div className={classNames(styles.content, 'windown-content')}>
-            {props.children}
+            {children}
           </div>
           <div
-            onClick={(e) => onClick(e)}
+            onClick={(e) => handleClick(e)}
             className={classNames(styles.bg, 'windown-bg')}
           ></div>
           <div
-            onClick={(e) => onClick(e)}
+            onClick={(e) => handleClick(e)}
             className={classNames(styles.close, 'windown-close')}
           >
-            {/* <IconClose
-              className={classNames(styles.iconClose, '"windown-icon-close"')}
-            /> */}
+            <div className={classNames(styles.closeInner)}>
+              <span className={classNames(styles.iconCloseLine)}></span>
+              <span className={classNames(styles.iconCloseLine)}></span>
+            </div>
           </div>
         </div>
       </div>

@@ -21,13 +21,15 @@ export const HeaderDesktop = ({ isTransparent }) => {
       >
         <div className={classNames('header-inner container-lg', styles.inner)}>
           <RevealFade>
-            <AppImage
-              src={logo}
-              priority={true}
-              height={50}
-              alt={TITLE_PAGE}
-              className={classNames(styles.logo)}
-            />
+            <AppLink url={'/'}>
+              <AppImage
+                src={logo}
+                priority={true}
+                height={50}
+                alt={TITLE_PAGE}
+                className={classNames(styles.logo)}
+              />
+            </AppLink>
           </RevealFade>
           <nav className={classNames(styles.nav)}>
             <div className={classNames(styles.navInner)}>

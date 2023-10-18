@@ -1,0 +1,44 @@
+@use '@/styles/_breakpoints' as _bp;
+
+.wrap {
+    background-color: var(--background);
+    padding: 70px 0 30px;
+
+    --size-basic: 1.4rem;
+
+    h4 {
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+
+    p {
+        color: var(--on-background);
+        font-size: var(--size-basic);
+        line-height: 1.5;
+        margin-bottom: 14px;
+    }
+}
+
+.link {
+    color: var(--on-background);
+    font-size: var(--size-basic);
+    font-weight: normal;
+    display: block;
+    line-height: 1.5;
+    margin-bottom: 14px;
+}
+
+@media #{_bp.$max-w-sm} {
+    .copyRight {
+        text-align: left;
+    }
+}
+
+@media #{_bp.$max-w-xs} {
+
+    .colBottom {
+        text-align: center;
+    }
+}

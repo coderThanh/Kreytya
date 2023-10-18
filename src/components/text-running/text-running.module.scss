@@ -5,7 +5,7 @@
 
     --x1: 0%;
     --x2: -200%;
-    --timing: 40s;
+    --timing: 32s;
 
     &.toRight {
         --x1: -200%;
@@ -21,22 +21,6 @@
     overflow: visible;
 }
 
-.title {
-    font-size: 7rem;
-    font-weight: 700;
-    line-height: 1.1;
-    text-transform: uppercase;
-    margin: 0;
-}
-
-.dot {
-    display: inline-block;
-    width: 1.5rem;
-    height: 1.5rem;
-    background-color: var(--primary);
-    border-radius: 50%;
-    vertical-align: middle;
-}
 
 .item {
     animation: ani-running var(--timing) infinite linear;

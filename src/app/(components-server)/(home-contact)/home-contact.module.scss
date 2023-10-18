@@ -1,0 +1,148 @@
+@use '@/styles/_breakpoints' as _bp;
+
+.inner {
+    background-color: var(--primary);
+    padding: 40px;
+    border-radius: 50px;
+    z-index: 10;
+    position: relative;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    color: var(--on-primary);
+    font-family: var(--font-family-title);
+    font-weight: 600;
+    line-height: 1.15;
+    font-size: 4rem;
+}
+
+.link {
+    --icon-w: 300px;
+    width: var(--icon-w);
+    flex: 0 0 var(--icon-w);
+    min-width: var(--icon-w);
+    height: var(--icon-w);
+    display: block;
+    position: relative;
+    z-index: 10;
+    background-color: var(--on-primary);
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0px 4px 20px rgb(0 0 0 / 10%);
+
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        left: -10%;
+        right: -10%;
+        bottom: -10%;
+        top: -10%;
+        border-radius: 50%;
+        background-color: var(--surface);
+        transform: translateX(-110%);
+        transition: 320ms all;
+    }
+
+    &:hover {
+        &::after {
+            transform: translateX(-2%);
+        }
+
+        .linkContent {
+            color: white;
+        }
+    }
+
+}
+
+.linkContent {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.linkIcon {
+    font-size: 4rem;
+    transition: 320ms all;
+    position: relative;
+    z-index: 20;
+}
+
+.linkText {
+    font-size: 1.5rem;
+    position: relative;
+    z-index: 20;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+
+    &>div>div:first-child {
+        width: 100%;
+    }
+
+}
+
+.btnText {
+    transition: 320ms all;
+    font-size: var(--size-l3);
+    padding: 10px 20px;
+    display: block;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media #{_bp.$max-w-sm} {
+    .content {
+        flex-direction: column;
+    }
+
+    .title {
+        text-align: center;
+    }
+}
+
+@media #{_bp.$max-w-xs} {
+    .inner {
+        padding: 40px 20px;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .link {
+        --icon-w: 260px;
+    }
+
+    .btnText {
+        padding: 7px 0px;
+    }
+}

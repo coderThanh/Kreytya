@@ -15,7 +15,7 @@ export const HomeWhyUs = () => {
     <>
       <section className={classNames(styles.wrap)}>
         <div className={classNames('container-lg', styles.inner)}>
-          <div className={classNames('row')}>
+          <div className={classNames('row row-collapse')}>
             <div className={classNames('col-12', styles.col)}>
               <div className={classNames(styles.colInner)}>
                 <UITitle

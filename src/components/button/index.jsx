@@ -30,6 +30,8 @@ export default function AppButton({
           kind == AppButtonKind.outline && styles.outline + ' btn_outline',
           color == AppButtonColor.primary && styles.primary + ' primary',
           color == AppButtonColor.white && styles.white + ' white',
+          color == AppButtonColor.whiteTransparent &&
+            styles.whiteTransparent + ' white-transparent',
           color == AppButtonColor.darkTransparent &&
             styles.darkTransparent + ' dark-transparent',
           color == AppButtonColor.gray && styles.gray + ' gray',

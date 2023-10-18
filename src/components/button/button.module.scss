@@ -62,6 +62,7 @@
     border-radius: 300px;
     background-color: var(--color-bg);
     opacity: var(--opacity-bg);
+
 }
 
 .default {
@@ -86,6 +87,15 @@
 
     &.darkTransparent {}
 
+    &.whiteTransparent {
+        --color-text: white;
+        --color-text-hover: var(--color-title);
+        --color-bg: var(--background);
+        --color-bg-hover: var(--background);
+        --opacity-bg: 0.1;
+        --opacity-bg-hover: 1;
+    }
+
     &.primary {
         --color-text: white;
         --color-text-hover: white;
@@ -99,7 +109,12 @@
 
     &.tertiary {}
 
-    &.white {}
+    &.white {
+        --color-text: var(--color-title);
+        --color-text-hover: white;
+        --color-bg: var(--background);
+        --color-bg-hover: var(--surface);
+    }
 
 
     &:hover,

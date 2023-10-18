@@ -12,6 +12,7 @@ export const AppButtonColor = {
   tertiary: 'tertiary',
   secondary: 'secondary',
   darkTransparent: 'darkTransparent',
+  whiteTransparent: 'whiteTransparent',
 }
 
 export const AppButtonSize = {

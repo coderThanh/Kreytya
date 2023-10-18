@@ -1,0 +1,29 @@
+@use '@/styles/_breakpoints' as _bp;
+
+.title {
+    font-size: 7rem;
+    font-weight: 700;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.dot {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+@media #{_bp.$max-w-xs} {
+    .title {
+        font-size: 4rem;
+    }
+
+    .dot {
+        width: 0.7rem;
+        height: 0.7rem;
+    }
+}
